@@ -1,8 +1,8 @@
 <?php
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
-    $apiKey = 'AIzaSyD0G_LKOxBPdoJlzPU1Avalu7hmH2_Cg10';
-    $cx = '2049ab071b5274da6';
+    $apiKey = 'AIzaSyDp8KYawOhF7cWSneuGNLTnO2D9mXCn2tY';
+    $cx = '56a9d004278b942fa';
     $url = "https://www.googleapis.com/customsearch/v1?key={$apiKey}&cx={$cx}&q={$search}";
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -15,7 +15,7 @@ function sanitizeInput($input) {
   $output = htmlspecialchars(strip_tags($input), ENT_QUOTES, 'UTF-8');
   // Remove any potential SQL injection attempts
   $output = str_replace("'", "", $output);
-  $output = str_replace("\"", "", $output);
+  $output = str_replace("/", "", $output);
   return $output;
 }
 
@@ -68,23 +68,6 @@ if (isset($_GET['search'])) {
     }
 }
 
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h2>My Browser</h2>
-<form method="GET" action="pr1.php">
-    <label for="search">Search:</label>
-    <input type="text" id="search" name="search" value=""><br><br>
-    <input type="submit" value="Submit">
-</form>
-
-<?php
 
 if (isset($items)) {
     foreach ($items as $item) {
@@ -96,6 +79,63 @@ if (isset($items)) {
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>My Browser</h2>
+<form  action="index.php" method="get">
+    <label for="search">Search:</label>
+    <input type="text" id="search" name="search" value=""><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+<h3>PHP: Hypertext Preprocessor</h3>
+<p>A popular general-purpose scripting language that is especially suited to web development.
+Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.</p>
+<p></p>
+<a href="">Read more</a><br><br>
+
+<h3>PHP</h3>
+<p>PHP is a general-purpose scripting language geared toward web development.[8] It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1993 and released in 1995.</p>
+<p></p>
+<a href="">Read more</a><br><br>
+
+<h3>PHP Tutorial</h3>
+<p>PHP: Hypertext Preprocessor (or simply PHP) is a server-side scripting language designed for Web development, but also used as a general-purpose programming.</p>
+<p></p>
+<a href="">Read more</a><br><br>
+
+<h3>PHP — Server-side scripting language designed for Web</h3>
+<p></p>
+<p></p>
+<a href="">Read more</a><br><br>
+
+<h3>PhpStorm: PHP IDE and Code Editor from JetBrains</h3>
+<p>PhpStorm is a development tool for PHP and Web projects. It's a perfect PHP IDE for working with Laravel, Symfony, Drupal, WordPress, and other frameworks.</p>
+<p></p>
+<a href="">Read more</a><br><br>
+
+<h3>PHP Programming with Visual Studio Code</h3>
+<p>Learn about Visual Studio Code editor features (syntax highlighting, snippets, linting) and extensions for PHP.</p>
+<p></p>
+<a href="">Read more</a><br><br>
+
+<h3>Composer</h3>
+<p>A Dependency Manager for PHP. Latest: 2.5.8 (changelog). Getting Started Download · Documentation Browse Packages · Issues GitHub</p>
+<p></p>
+<a href="">Read more</a><br><br>
+
+<h3>Doctrine: PHP Open Source Project</h3>
+<p>The Doctrine Project is an open-source PHP project that is home to home to several PHP libraries primarily focused on database storage and object mapping.</p>
+<p></p>
+<a href="">Read more</a><br><br>
+
 
 </body>
 </html>
