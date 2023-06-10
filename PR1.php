@@ -1,14 +1,13 @@
 <?php
-
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
-    $apiKey = 'AIzaSyDp8KYawOhF7cWSneuGNLTnO2D9mXCn2tY';
-    $cx = '56a9d004278b942fa';
+    $apiKey = 'AIzaSyD0G_LKOxBPdoJlzPU1Avalu7hmH2_Cg10';
+    $cx = '2049ab071b5274da6';
     $url = "https://www.googleapis.com/customsearch/v1?key={$apiKey}&cx={$cx}&q={$search}";
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-<?php
+}
 
 // Function to sanitize user input
 function sanitizeInput($input) {
@@ -79,7 +78,7 @@ if (isset($_GET['search'])) {
 </head>
 <body>
 <h2>My Browser</h2>
-<form method="GET" action="index.php">
+<form method="GET" action="pr1.php">
     <label for="search">Search:</label>
     <input type="text" id="search" name="search" value=""><br><br>
     <input type="submit" value="Submit">
